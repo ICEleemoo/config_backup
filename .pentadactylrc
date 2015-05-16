@@ -1,0 +1,12 @@
+"1.1
+
+loadplugins '\.(js|penta)$'
+group user
+highlight Hint font: bold 14px "Droid Sans Mono", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 0px solid rgba(0, 0, 0, .5); background: rgba(255, 255, 255, .8); color: red; text-transform: uppercase;
+map -count -modes=n,v <Space> <count><C-d>
+map -count -modes=n h <count>gT
+map -count -modes=n l <count>gt
+set hintkeys=abcdefghijklmnopqrstuvwxyz/
+set maxitems=8
+
+" vim: set ft=pentadactyl:
