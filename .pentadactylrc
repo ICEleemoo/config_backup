@@ -9,4 +9,4 @@ map -count -modes=n l <count>gt
 set hintkeys=abcdefghijklmnopqrstuvwxyz/
 set maxitems=8
 
-" vim: set ft=pentadactyl:
+"" vim: set ft=pentadactyl:
