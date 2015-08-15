@@ -76,18 +76,42 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
-alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias ll='la -lh'
+
+# Here is one to extract all compressed files:
+extract() {
+		if [ -f $1 ] ; then
+				case $1 in 
+						*.tar.bz2)	tar xvjf $1		;;
+						*.tar)		tar xvf $1		;;
+						*.tar.gz) 	tar xvzf $1 	;;
+						*.bz2)		bunzip2 $1		;;
+						*.rar)		rar x $1		;;
+						*.gz) 		gunzip $1		;;
+						*.tbz2)		tar xvjf $1 	;;
+						*.tgz)		tar xvzf $1		;;
+						*.zip)		unzip $1		;;
+						*.Z) 		uncompress $1	;;
+						*.7z)		7z x $1			;;
+						*)			echo "unkown how to extract '$1' file..."	;;
+				esac
+		else
+				echo " '$1' is not a valid file!"
+		fi
+}
+
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
