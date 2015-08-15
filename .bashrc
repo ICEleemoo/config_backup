@@ -112,6 +112,8 @@ extract() {
 }
 
 
+#Some of other alias.
+alias free='free -h'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
